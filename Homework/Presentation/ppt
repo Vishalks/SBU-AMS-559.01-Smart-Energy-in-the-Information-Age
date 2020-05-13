@@ -1,0 +1,90 @@
+Hello, my name is Vishal and I will be presenting a paper on Context Aware Smart Energy Recommender (CASER)
+
+To start with, we will see why it is so important to have a balance between electricity supply and demand?
+Storing electricity effectively at a large-scale capacity is currently impractical.
+Electricity must be generated and supplied based on consumer demand instantly, in varying quantities.
+This highly fluctuating demand requires electricity providers to maintain expensive distribution and generation infrastructure.
+At certain periods, the consumer demand can be higher than the average supply level, which is known as peak demand.
+In order to meet this peak, the power grid infrastructure must be built appropriately.
+However this also means that the system remains under-utilised most of the time.
+For example, due to COVID-19, not only has demand eroded but peaks are occurring at different times of the day.
+Weekday peaks that used to occur at 8 a.m. are now nearer to lunchtime, and evening high points are no more.
+
+A demand response strategy can be formulated to maintain the balance between supply and demand.
+Demand response encourages end consumers to voluntarily alter their consumption based on supply signals.
+The provider gives incentives to consumers who are willing to shift their consumption from peak to off peak time periods.
+Real-time electricity prices could be provided to the consumer to help them better manage their appliance usage in response to price.
+Reducing the peak demand preempts the need to invest in additional infrastructure that are utilised only during these narrow peak periods.
+Thus it is a win win situation for both sides.
+
+What are the challenges in implementing this strategy?
+Previous attempts at this didn't consider the role of context in the entire chain.
+Context can be any information related to the user, building, grid or the surrounding environment.
+Another challenge is that initial user interest in the consumption data is highly positive,
+but maintaining user engagement in the data over a long period of time is known to be problematic.
+Due to the diversity of large number of consumer profiles at the local level, it is very difficult to accurately predict energy consumption
+for each of them for the immediate future.
+Also, the benefits of a provider side visual interface has had limited exploration in the past.
+
+A research paper tries to overcome these challenges by implementing CASER which stands for Context Aware Smart Energy Recommender.
+The CASER consists of a client-side mobile app and a server-side web portal.
+The data from the home smart meters is collected at regular intervals and stored in the server database.
+The backend processes this data for usage statistics and recommendations.
+These recommendations are based on the usage pattern of each household and are generated using various rules according to different context parameters.
+The usage reports are shown to the residents through the mobile app.
+The reports provide residents with the information about the status of their usage against the substation threshold and recommends them
+to switch their usage times to minimize the energy costs.
+CASER also takes into account the impact of various contexts on the consumption prediction.
+
+The CASER architecture consists of Recommendation module and Rule repository module.
+The rule repository module consists of a set of rules written based on the energy plans and tariff rates of the energy provider.
+The module checks the energy plan that the user has subscribed to and generates recommendations regarding the available time slots with cheaper tariff rates.
+The recommendation module works in combination with the rule repository module and gives recommendations to the user to shift the device usage based on the
+future consumption prediction.
+SVM Regressor with Gaussian kernel is used for generating recommendations.
+
+CASER uses client-server architecture with the server running on Internet Information Services and two client versions i.e. mobile frontend and desktop/web frontend.
+The data from households is fed into the database directly via csv files.
+The server processes the data and sends the usage statistics to web portal and mobile application for energy provider and consumers respectively.
+The CASER application is based on Dot Net Framework, built using ASP.NET MVC and MicrosoftSQL as the database.
+The web frontend is built using jQuery2 and the mobile frontend using Ionic3.
+Both frontends communicate with the backend via RESTful services.
+Next we will see some actual snapshots of the app.
+
+The landing screen of the mobile app to the left shows the consumption of the household and recommendations for the real-time consumption.
+The top line graph shows real-time electricity consumption of the household against the threshold.
+The colored line charts are complemented by notifications and responsive images  making it much easier for the user to stay informed about the current
+consumption. The app recommends the user to shift the usage to a time slot using less tariff rates.
+The app also enables the users to see the predicted usage for the next 10 hours.
+Figure to the right shows the list of recommendations given for the predicted consumption. It also shows the details about the predicted
+consumption, which would exceed the threshold.
+Besides warning the users when the threshold is exceeded, it also recommends an alternative time and energy plan for the user.
+
+The back-end web portal can be accessed by energy providers and provides them a number of reports about each home’s energy usage. 
+It also performs analysis of consumer electricity usage at a sub station level, and provides prediction for estimation of expected load usage
+in each home for real time load balancing.
+This line chart shows the consumption of the overall substation against the threshold represented by the red dotted line.
+This bar graph in the right shows the total consumption of each household for the selected year and month.
+This gives a clear picture of which houses tend to have significantly higher usage of electricity for that time period.
+Figure at the bottom shows the monthly aggregate consumption for each day grouped as weeks.
+All these visualization make it very easy to see how the consumption pattern looks diferent for each day.
+
+CASER has been implemented using the data publicly available on Pelican Street.
+The dataset contains energy consumption information of 125 homes from a certain area in Australia.
+To simulate the substation load, the aggregate energy use of those 125 houses was calculated.
+This was then used to predict the actual load and generate appropriate recommendations.
+The experiments used 1 month data for training and 2 months data for testing. The metric used in the experiments was the root mean square error (RMSE).
+The RMSE was calculated over range of percentiles of households’ energy consumption. 
+Various scenarios related to the contextual information were considered during the experiments. For example, scenario 1 used only the time of day
+while scenario 4 used date, time, and current usage.
+
+Thus, we saw that CASER provides both residents and energy providers with smart energy recommendations and usage prediction to support demand response initiatives.
+The CASER improves energy savings at residential houses and enables energy providers to better monitor and manage substation load.
+It also incorporates key contextual information of date and time, and the current usage for predictions.
+CASER also tries to maintain user engagement with intuitive visualization.
+The future work scope for CASER may include adding more contextual information related to households such as the household size, insulation or residents’ demographics.
+The sample size for the experiments can also be increased.
+Algorithms other than SVM can be used to train on the data and their performance can be compared to select the best algorithm.
+User studies can also be conducted to test the effectiveness of the visualization methods applied in the application and make changes if required.
+
+THANK YOU!

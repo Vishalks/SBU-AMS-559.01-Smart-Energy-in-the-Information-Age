@@ -1,0 +1,12 @@
+Not only has demand eroded, peaks are occurring at different times of the day. Weekday peaks that used to occur at 8 a.m. are now nearer to lunchtime,
+and evening high points — correlating with people returning home and turning on lighting, appliances and air conditioning — are no more.
+
+
+
+
+A client-server architecture with the server running on IIS (Internet Information Services) and two client versions
+CSV files used to dump data from meters in MS SQL database
+Based on Dot Net Framework and built using ASP.NET MVC as the web framework
+Web frontend – Jquery
+Mobile frontend – Ionic
+Communication with the backend via Web API
