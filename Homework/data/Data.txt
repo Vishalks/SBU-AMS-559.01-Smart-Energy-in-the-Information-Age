@@ -1,0 +1,4 @@
+Home	Weather From		Weather To	Weather Duration	Meter From	Meter To		Meter Duration
+B	Jan1,2014 00:00		Dec31,2014 12AM	hourly			Jan1,2014	Dec31,2014		half hourly
+C	Jan1,2015 00:00		Dec31,2015 12AM	hourly			Jan1,2015	Dec31,2015		Half hourly till Dec16, 00 AM. Missing data from 0.01 to 0.28 AM, and then per minute from 0.29 AM till Dec31, 23.59
+F	Jan1,2016 00:00		Dec31,2016 12AM	hourly			Jan1,2016	Dec15,2016,22:44	per minute
